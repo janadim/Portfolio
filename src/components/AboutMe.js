@@ -29,6 +29,8 @@ const AboutMe = () => {
         improvement and eager to take on new challenges.
       </p>
     </div>
+
+    // <img className="main-img" src={Rickandmorty}></img>
   );
 };
 export default AboutMe;
