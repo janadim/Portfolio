@@ -3,9 +3,8 @@ import React from "react";
 import AboutMe from "./AboutMe";
 import Introduction from "./Introduction";
 import TechStack from "./TechStack";
-// import Proyectos from "./Proyectos";
-// import Habilidades from "./Habilidades";
-// import SobreMi from "./SobreMi";
+import WorkExperience from "./WorkExperience";
+import Projects from "./Projects";
 
 function Main() {
   return (
@@ -13,6 +12,8 @@ function Main() {
       <Introduction />
       <AboutMe />
       <TechStack />
+      <WorkExperience />
+      <Projects />
     </div>
   );
 }

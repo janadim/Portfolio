@@ -1,11 +1,13 @@
 @import "./core/reset";
 @import "./core/variables";
+@import "./core/mixins";
 @import "./html.scss";
 
 
 .hero {
   display: grid;
   top: 0;
+ 
 }
 
 .header {
@@ -17,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 
 
   &__title {
@@ -36,15 +39,16 @@
   top: 40px;
   width: 100%;
   padding: 5px;
+  z-index: 9999;
 
-  &__home, &__about, &__techstack, &__workexperience, &__education, &__projects {
+  &__home, &__about, &__techstack, &__workexperience, &__contact, &__projects {
     display: inline-block;
     position: relative;
     color: white;
     // color: transparentize(#fff066, 0.3);
   }
 
-  &__home::after, &__about::after, &__techstack::after, &__workexperience::after, &__education::after, &__projects::after {
+  &__home::after, &__about::after, &__techstack::after, &__workexperience::after, &__contact::after, &__projects::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -58,7 +62,7 @@
     border-radius: 2px;
   }
 
-  &__home:hover::after, &__about:hover::after, &__techstack:hover::after, &__workexperience:hover::after, &__education:hover::after, &__projects:hover::after {
+  &__home:hover::after, &__about:hover::after, &__techstack:hover::after, &__workexperience:hover::after, &__contact:hover::after, &__projects:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
@@ -114,7 +118,7 @@
 .aboutme {
   position: relative;
   padding-left: 75px;
-  top: 200px;
+  top: 230px;
   width: 65vw;
   text-align: left;
 
@@ -147,16 +151,317 @@
 
 }
 
+
+
 .techstack {
   position: relative;
   padding-left: 75px;
-  top: 200px;
+  top: 230px;
   width: 65vw;
   text-align: left;
+  margin-top: 80px;
+  padding-bottom: 260px;
 
 
   &__title {
     font-size: 30px;
+  }
+}
+
+.skills{
+  margin-top: 40px;
+  width: 100%;
+  // background-color: #070707;
+
+  &__title {
+    font-size: 17px;
+    background-color: $colorPrincipal;
+    padding-left: 10px;
+    color: white;
+  }
+ 
+  &__container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-top: 10px;
+  }
+  &__image{
+      width: 35px;
+      height: auto;
+      margin: 15px;
+  }
+
+
+// @include tablet{
+//   margin-top: 30px;
+//   &__title{
+//       font-size: 16px;
+//       height: 20px;
+//   }
+//   &__image{
+//       width: 45px;
+//       height: auto;
+//       margin-right: 25px;
+//       margin-bottom: 15px;
+//   }
+//   &__container{
+//       padding-bottom: 20px;
+//   }
+// }
+// @include desktop{
+//   padding-left: 15px;        
+//   text-align: center;
+//   &__title{
+//       color: white;
+//       font-size: 14px;
+//       width: 200px;
+//       background-color: $colorPrincipal;
+//       text-transform: uppercase;
+      
+//   }
+//   &__image{
+//       width: 40px;
+//       margin-right: 45px;
+//   }
+// }
+}
+
+
+.workexperience {
+  text-align: left;
+  position: relative;
+  padding-left: 75px;
+  top: 60px;
+  width: 65vw;
+  text-align: left;
+  padding-bottom: 180px;
+
+
+  &__title {
+    font-size: 30px;
+    padding-bottom: 20px;;
+  }
+
+  &__subtitle {
+    background-color: $colorPrincipal;
+    padding: 10px;
+    color: white;
+  }
+
+  &__text {
+    padding-top: 20px;
+    line-height: 23px;
+    font-size: 17px;
+
+    &--hl{
+      background-color: transparentize($colorSecundary, 0.70s);
+    }
+
+    &--1 {
+      text-indent: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    &--2 {
+      text-indent: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+     
+
+      &-duties {
+         padding-top: 15px;
+         li {
+          list-style-type: circle;
+        
+         }
+         li::marker {
+          content: '✝ ';
+          font-size: 1.2em;
+          color: $colorSecundary;
+         }
+      }
+    }
+  }
+}
+
+.projects__title{
+  font-size: 30px;
+  text-align: left;
+  padding-left: 75px;
+}
+
+.proyectos {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  padding-left: 75px;
+  padding-right: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  &__rectangle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: $colorSecundary;
+    height: 300px;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  // &__title {
+  //   margin-top: 70px;
+  //   padding-left: 37px;
+  //   padding-right: 36px;
+  //   font-size: 30px;
+  //   background-color: #070707;
+  // }
+  &__name {
+    font-size: 18px;
+  }
+  &__description {
+    text-align: center;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  &__list {
+    display: flex;
+    &--link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      margin-right: 10px;
+      border-radius: 5px;
+      &:hover {
+        background-color: rgb(79, 76, 76);
+        color: white;
+      }
+    }
+  }
+  &__enlace {
+    &--link {
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  &__image {
+    width: 200px;
+    height: 150px;
+    padding-top: 10px;
+  }
+  &__button {
+    background-color: $colorPrincipal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  @include tablet {
+    display: flex;
+    // justify-content: space-between;
+    &__rectangle {
+      width: 210px;
+      justify-content: space-evenly;
+    }
+    &__name {
+      font-size: 18px;
+    }
+    &__description {
+      font-size: 14px;
+    }
+    &__list {
+      &--link {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &__image {
+      width: 150px;
+      height: 100px;
+      padding-top: 0;
+    }
+    &__button {
+      font-size: 16px;
+      height: 35px;
+      width: 100%;
+    }
+  }
+  @include desktop {
+    &__rectangle {
+      height: 310px;
+      width: 100%;
+    }
+    &__name {
+      font-size: 18px;
+    }
+    &__description {
+      font-size: 16px;
+      width: 250px;
+    }
+    &__list {
+      &--link {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &__image {
+      width: 200px;
+      height: 150px;
+      padding-top: 25px;
+      margin-bottom: 20px;
+    }
+    &__button {
+      font-size: 16px;
+      height: 35px;
+      width: 300px;
+    }
+  }
+}
+
+.section-proyects {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.projects-list {
+  @include tablet {
+    display: grid; 
+    grid-template-columns: 210px 210px 210px; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 20px 20px;
+  }
+  @include desktop {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: 40px;
+    margin-left: 150px;
+    margin-right: 150px;
   }
 }
 
@@ -179,6 +484,8 @@
     color: white;
   }
 }
+
+
 
 
 // .list-container {

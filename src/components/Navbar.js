@@ -11,11 +11,11 @@ const Navbar = () => {
         <Link to="/workexperience" className="links__workexperience">
           Work Experience
         </Link>
-        <Link to="/education" className="links__education">
-          Education
-        </Link>
         <Link to="/projects" className="links__projects">
           Projects
+        </Link>
+        <Link to="/contact" className="links__contact">
+          Contact
         </Link>
       </div>
     </nav>

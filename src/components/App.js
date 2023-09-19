@@ -61,31 +61,13 @@ function App() {
           <Header />
           <Navbar />
         </div>
-        {/* <Route exact path="/">
-          <Main />
-        </Route> */}
-        <Switch>
-          <Route exact path="/">
-            <Main />
-          </Route>
-          {/* <Route path="/aboutme">
-            <AboutMe />
-          </Route> */}
-        </Switch>
+        {/* <Switch>
+          <Route exact path="/"> */}
+        <Main />
+        {/* </Route>
+        </Switch> */}
         <Footer />
       </section>
-      {/* <Switch>
-          <Route exact path="/">
-            <div className="list-container">
-              <FilterByName
-                handleFilter={handleFilter}
-                filterName={filterName}
-              />
-              <CharacterList chars={filteredChars} filterName={filterName} />
-            </div>
-          </Route>
-          <Route path="/character/:id" render={renderCharDetail} />
-        </Switch> */}
     </>
   );
 }
