@@ -29,6 +29,7 @@ const AboutMe = () => {
         improvement and eager to take on new challenges.
       </p>
     </div>
+    
   );
 };
 export default AboutMe;
