@@ -4,9 +4,9 @@ const AboutMe = () => {
       <h1 className="aboutme__title">About me</h1>
       <p className="aboutme__text--1">
         Coming from the laboratory technician background, I found the pandemic
-        as a game changer in my professional carreer. I used this (full of
-        uncertainty) time to reassess my carrer path around IT and programming.
-        Today, programming for me means{" "}
+        as a game changer in my professional carreer. I used this time to
+        reassess my carrer path around IT and programming. Today, programming
+        for me means{" "}
         <span className="aboutme__text--hl">
           creation, expression and personality
         </span>{" "}

@@ -47,9 +47,9 @@
             "name": "Portfolio",
             "description": "Portfolio, hecha con React",
             "tools": "HTML | SASS | REACT",
-            "git": "https://github.com/NurAhissami/PortFolio",
-            "web": "https://nurahissami.github.io/PortFolio/#/",
-            "img": "",
+            "git": "https://github.com/janadim/Portfolio",
+            "web": "https://janadim.github.io/Portfolio/#/",
+            "img": "https://raw.githubusercontent.com/janadim/Portfolio/master/src/images/Capture.portfolio.PNG",
                 "status": "active"
         
             }
