@@ -11,7 +11,7 @@ const WorkExperience = () => {
         assets.
       </p>
 
-      <p className="workexperience__text--2">
+      <div className="workexperience__text--2">
         Apart from building the final product, some of my responsibilities were:
         <ul className="workexperience__text--2-duties">
           <li>
@@ -32,7 +32,7 @@ const WorkExperience = () => {
             Taking over the stand-up meetings during scrum master’s absence.
           </li>
         </ul>
-      </p>
+      </div>
     </div>
   );
 };

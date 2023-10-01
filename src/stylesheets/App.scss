@@ -4,6 +4,17 @@
 @import "./html.scss";
 
 
+.body-contaner {
+  text-align: center;
+
+  @include desktop{
+    text-align: center;
+    align-items: center;
+  }
+
+}
+
+
 .hero {
   display: grid;
   top: 0;
@@ -29,51 +40,100 @@
   }
 }
 
-.links {
-  position: fixed;
+// .links {
+//   position: fixed;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content:space-evenly;
+//   flex-wrap: wrap;
+//   background-color: black;
+//   top: 40px;
+//   width: 100%;
+//   padding: 5px;
+//   z-index: 9999;
+
+//   &__home, &__about, &__techstack, &__workexperience, &__contact, &__projects {
+    // display: inline-block;
+    // position: relative;
+//     color: white;
+//     // color: transparentize(#fff066, 0.3);
+//   }
+
+  // &__home::after, &__about::after, &__techstack::after, &__workexperience::after, &__contact::after, &__projects::after {
+  //   content: '';
+  //   position: absolute;
+  //   width: 100%;
+  //   transform: scaleX(0);
+  //   height: 3px;
+  //   bottom: 0;
+  //   left: 0;
+  //   background-color: #5DBACC;
+  //   transform-origin: bottom left;
+  //   transition: transform 0.25s ease-out;
+  //   border-radius: 2px;
+  // }
+
+  // &__home:hover::after, &__about:hover::after, &__techstack:hover::after, &__workexperience:hover::after, &__contact:hover::after, &__projects:hover::after {
+  //   transform: scaleX(1);
+  //   transform-origin: bottom left;
+  // }
+// }
+
+
+.sm {
   display: flex;
-  flex-direction: row;
-  justify-content:space-evenly;
-  flex-wrap: wrap;
-  background-color: black;
-  top: 40px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: 5px;
+  height: 27px;
+  position: fixed;
   z-index: 9999;
+  background-color: rgb(0, 0, 0);
+  top: 40px;
 
-  &__home, &__about, &__techstack, &__workexperience, &__contact, &__projects {
-    display: inline-block;
-    position: relative;
-    color: white;
-    // color: transparentize(#fff066, 0.3);
+  &__list {
+    display: flex;
+    align-items: center;
+
   }
+  &__link {
+    padding: 30px;
+    font-size: 16px;
+    &--icon {
+      color: white;
+      display: inline-block;
+      position: relative;
+    }
 
-  &__home::after, &__about::after, &__techstack::after, &__workexperience::after, &__contact::after, &__projects::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: #5DBACC;
-    transform-origin: bottom left;
-    transition: transform 0.25s ease-out;
-    border-radius: 2px;
+    &--icon{
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
   }
+  @include tablet {
+    height: 35px;
 
-  &__home:hover::after, &__about:hover::after, &__techstack:hover::after, &__workexperience:hover::after, &__contact:hover::after, &__projects:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    &__link {
+      font-size: 18px;
+    }
+  }
+  @include desktop {
+    height: 35px;
+
+    &__link {
+      font-size: 18px;
+    }
   }
 }
 
 
-
 .introduction {
+  
   position: relative;
   display: block;
-  width: 40%;
+  width: 400px;
   top: 150px;
   text-align: left;
   left: 100px;
@@ -116,11 +176,19 @@
 
 
 .aboutme {
+
+  @include desktop{
+    padding-left: 75px;
+    box-sizing: border-box;
+  }
+
+
   position: relative;
-  padding-left: 75px;
+  padding-left: 12.5vw;
   top: 230px;
-  width: 65vw;
+  width: 75vw;
   text-align: left;
+  box-sizing: content-box;
 
 
   &__title {
@@ -154,13 +222,22 @@
 
 
 .techstack {
+
+  @include desktop{
+    padding-left: 75px;
+    box-sizing: border-box;
+  }
+
+
   position: relative;
-  padding-left: 75px;
-  top: 230px;
-  width: 65vw;
-  text-align: left;
   margin-top: 80px;
   padding-bottom: 260px;
+
+  padding-left: 12.5vw;
+  top: 230px;
+  width: 75vw;
+  text-align: left;
+  box-sizing: content-box;
 
 
   &__title {
@@ -169,9 +246,9 @@
 }
 
 .skills{
+  
   margin-top: 40px;
   width: 100%;
-  // background-color: #070707;
 
   &__title {
     font-size: 17px;
@@ -192,49 +269,22 @@
       margin: 15px;
   }
 
-
-// @include tablet{
-//   margin-top: 30px;
-//   &__title{
-//       font-size: 16px;
-//       height: 20px;
-//   }
-//   &__image{
-//       width: 45px;
-//       height: auto;
-//       margin-right: 25px;
-//       margin-bottom: 15px;
-//   }
-//   &__container{
-//       padding-bottom: 20px;
-//   }
-// }
-// @include desktop{
-//   padding-left: 15px;        
-//   text-align: center;
-//   &__title{
-//       color: white;
-//       font-size: 14px;
-//       width: 200px;
-//       background-color: $colorPrincipal;
-//       text-transform: uppercase;
-      
-//   }
-//   &__image{
-//       width: 40px;
-//       margin-right: 45px;
-//   }
-// }
 }
 
 
 .workexperience {
-  text-align: left;
+
+  @include desktop{
+    padding-left: 75px;
+    box-sizing: border-box;
+  }
+
   position: relative;
-  padding-left: 75px;
-  top: 60px;
-  width: 65vw;
+  padding-left: 12.5vw;
+  width: 75vw;
   text-align: left;
+  box-sizing: content-box;
+  top: 60px;
   padding-bottom: 180px;
 
 
@@ -287,9 +337,16 @@
 }
 
 .projects__title{
-  font-size: 30px;
+  @include desktop{
+    padding-left: 75px;
+    box-sizing: border-box;
+  }
+
+  position: relative;
+  padding-left: 12.5vw;
+  width: 75vw;
   text-align: left;
-  padding-left: 75px;
+  font-size: 30px;
 }
 
 .proyectos {
@@ -320,13 +377,7 @@
     margin: 10px;
   }
 
-  // &__title {
-  //   margin-top: 70px;
-  //   padding-left: 37px;
-  //   padding-right: 36px;
-  //   font-size: 30px;
-  //   background-color: #070707;
-  // }
+
   &__name {
     font-size: 18px;
   }
