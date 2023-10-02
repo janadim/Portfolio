@@ -92,14 +92,18 @@
 
 .introduction {
   
+  @include desktop{
+    padding-left: 75px;
+  }
+
   position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 400px;
-  top: 150px;
+  display: block;
+  width: 75vw;
+  top: 130px;
   text-align: left;
-  margin-left: 5vw;
+  padding-left: 12.5vw;
+  
+
 
   &__title {
     position: relative;
@@ -148,7 +152,7 @@
 
   position: relative;
   padding-left: 12.5vw;
-  top: 230px;
+  top: 220px;
   width: 75vw;
   text-align: left;
   box-sizing: content-box;

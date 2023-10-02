@@ -59,7 +59,6 @@ function App() {
       <section className="main-container">
         <div className="hero">
           <Header />
-          <Navbar />
           <SocialMedia />
         </div>
         <div className="body-container">
