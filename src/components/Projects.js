@@ -26,9 +26,6 @@ function Projects() {
     <section>
       <h2 className="projects__title">Projects</h2>
       <ul className="proyectos">{index}</ul>
-      <Link to="/proyectos" className="proyectos__button">
-        Ver más
-      </Link>
     </section>
   );
 }

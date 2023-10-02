@@ -3,14 +3,8 @@ const AboutMe = () => {
     <div className="aboutme">
       <h1 className="aboutme__title">About me</h1>
       <p className="aboutme__text--1">
-        Coming from the laboratory technician background, I found the passion
-        within the IT and programming world. Programming means{" "}
-        <span className="aboutme__text--hl">
-          creation, expression and personality
-        </span>{" "}
-        in itself for me and I have felt immersed for its{" "}
-        <span className="aboutme__text--hl">limitless possibilities</span> and
-        the freedom that it provides.
+        As a Frontend Developer with a degree in Food Science and Technology, I
+        combine my passion for technology with my interest in programming.
       </p>
 
       <p className="aboutme__text--2">
