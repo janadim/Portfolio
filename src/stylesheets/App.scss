@@ -93,11 +93,13 @@
 .introduction {
   
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width: 400px;
   top: 150px;
   text-align: left;
-  left: 100px;
+  margin-left: 5vw;
 
   &__title {
     position: relative;
