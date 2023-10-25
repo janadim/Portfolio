@@ -11,7 +11,7 @@ import Header from "./Header";
 // import Landing from "./Main";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import AboutMe from "./AboutMe";
+import SocialMedia from "./SocialMedia";
 import Main from "./Main";
 
 function App() {
@@ -59,13 +59,12 @@ function App() {
       <section className="main-container">
         <div className="hero">
           <Header />
-          <Navbar />
+          <SocialMedia />
         </div>
-        {/* <Switch>
-          <Route exact path="/"> */}
-        <Main />
-        {/* </Route>
-        </Switch> */}
+        <div className="body-container">
+          <Main />
+        </div>
+
         <Footer />
       </section>
     </>

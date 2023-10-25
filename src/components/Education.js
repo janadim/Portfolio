@@ -1,0 +1,48 @@
+const Education = () => {
+  return (
+    <div className="education">
+      <h1 className="education__title">Education</h1>
+      <h3 className="education__subtitle">
+        Adalab (Madrid) | Mar 2021 - Aug 2021
+      </h3>
+      <p className="education__text--1">
+        Intensive Bootcamp in Front-end Development, Software Development.
+      </p>
+
+      <div className="education__text--2">
+        Front-end Development || Back-end basics
+        <ul className="education__text--2-duties">
+          <li>
+            Layout: HTML5, CSS3, Flexbox, CSS Grid, responsive design, SASS,
+            animations, Layout Components and BEM method.
+          </li>
+          <li>Web development frameworks: Bootstrap.</li>
+          <li>SPAs using JavaScript and React.</li>
+          <li>
+            Third party APIs web service and back-end programming: NodeJS,
+            Express and SQLite.
+          </li>
+          <li>Version Control with Git.</li>
+          <li>Experience developing projects using Agile and SCRUM.</li>
+          <li>
+            Development tools: Gulp, Visual Studio Code, Terminal, Zeplin.
+          </li>
+          <li>Communication and teamwork tools: Slack, GitHub.</li>
+        </ul>
+      </div>
+
+      <h3 className="education__subtitle">
+        University of Valencia (Valencia) | Sep 2014 - Jul 2017
+      </h3>
+      <p className="education__text--1">Bachelor</p>
+      <p className="education__text--1">Food Science and Technology</p>
+
+      <h3 className="education__subtitle">
+        IES Enrique Tierno Galván (Valencia) | Sep 2012 - Jul 2014
+      </h3>
+      <p className="education__text--1">MBO 4</p>
+      <p className="education__text--1">Clinical/Medical Laboratory</p>
+    </div>
+  );
+};
+export default Education;

@@ -5,6 +5,7 @@ import Introduction from "./Introduction";
 import TechStack from "./TechStack";
 import WorkExperience from "./WorkExperience";
 import Projects from "./Projects";
+import Education from "./Education";
 
 function Main() {
   return (
@@ -13,6 +14,7 @@ function Main() {
       <AboutMe />
       <TechStack />
       <WorkExperience />
+      <Education />
       <Projects />
     </div>
   );
