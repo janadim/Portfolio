@@ -3,7 +3,7 @@ const WorkExperience = () => {
     <div className="workexperience">
       <h1 className="workexperience__title">Work Experience</h1>
       <h3 className="workexperience__subtitle">
-        Frontend Developer at Content Stadium (Amsterdam) | Oct 2021 - May 2023
+        Frontend Developer at Content Stadium (Amsterdam) | Oct 2021 - Oct 2023
       </h3>
       <p className="workexperience__text--1">
         Creating flexible, versatile and customizable templates for sports
