@@ -3,8 +3,6 @@
 @import "./core/mixins";
 @import "./html.scss";
 
-// @import "compass/css3";
-// @import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,500,600);
 
 .main {
   display: flex;
@@ -30,7 +28,6 @@
 
 .landing {
   display: flex;
-  // align-content: center;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -245,19 +242,11 @@
 
 
 .introduction {
-
-  @include desktop{
-    // padding-left: 30vw;
-  }
-
   position: relative;
   display: block;
-  // width: 30vw;
   top: 130px;
   text-align: left;
   opacity: 0;
-  // transition: opacity 1s ease;
-  // padding-left: 12.5vw;
 
 
   &__title {
