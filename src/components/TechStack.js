@@ -1,8 +1,6 @@
 import React from "react";
 
 //images
-// import ai from "../images/ai.png";
-// import autocad from "../images/autocad.png";
 import boots from "../images/boots.png";
 import code from "../images/code.png";
 import css from "../images/css.png";
@@ -95,7 +93,7 @@ const TechStack = () => {
               className="skills__image"
               alt="restapi"
               src={restapi}
-              title="RestApi"
+              title="RESTfull APIs integration"
             />
           </li>
           <li className="skills__list">

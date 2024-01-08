@@ -37,11 +37,6 @@ function SocialMedia() {
           </li>
         </ul>
       </nav>
-      {/* <div className="working">
-        <div className="working__animation">
-          <span className="working__text">Esta web está en construcción</span>
-        </div>
-      </div> */}
     </div>
   );
 }

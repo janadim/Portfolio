@@ -23,7 +23,7 @@ function Projects() {
   const index = projects.slice(0, 5);
 
   return (
-    <section>
+    <section className="projects">
       <h2 className="projects__title">Projects</h2>
       <ul className="proyectos">{index}</ul>
     </section>

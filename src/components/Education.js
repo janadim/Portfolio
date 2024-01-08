@@ -31,7 +31,7 @@ const Education = () => {
         </ul>
       </div>
 
-      <h3 className="education__subtitle">
+      {/* <h3 className="education__subtitle">
         University of Valencia (Valencia) | Sep 2014 - Jul 2017
       </h3>
       <p className="education__text--1">Bachelor</p>
@@ -41,7 +41,7 @@ const Education = () => {
         IES Enrique Tierno Galván (Valencia) | Sep 2012 - Jul 2014
       </h3>
       <p className="education__text--1">MBO 4</p>
-      <p className="education__text--1">Clinical/Medical Laboratory</p>
+      <p className="education__text--1">Clinical/Medical Laboratory</p> */}
     </div>
   );
 };

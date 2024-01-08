@@ -3,6 +3,20 @@
 @import "./core/mixins";
 @import "./html.scss";
 
+// @import "compass/css3";
+// @import url(https://fonts.googleapis.com/css?family=Exo+2:300,400,500,600);
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.main-container {
+  background-color: #070707e6;
+}
 
 .body-contaner {
   text-align: center;
@@ -14,18 +28,152 @@
 
 }
 
+.landing {
+  display: flex;
+  // align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  background: url("../images/neon.png");
+  width: 100vw;
+
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position-y: top;
+  background-position-x: left;
+  background-size: auto;
+
+  .glitch{
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 900;
+    color:white;
+    font-size:100px;
+    position:relative;
+    margin:0 auto;
+    text-shadow:
+        0px -2px 10px rgba(255,255,255,1),
+        0px 0px 5px rgba(255,255,255,0),
+        0px 0px 10px rgba(255,255,255,0),
+        0px 0px 15px rgba(255,255,255,0),
+        0px 0px 20px rgba(255,255,255,0);
+    animation:noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate, blur 8s ease-in-out infinite alternate;
+    transform: skewX(0deg);
+    white-space: nowrap;
+
+
+}
+
+
+.glass {
+  position: absolute;
+  transition: .1s ease;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position-y: top;
+  background-position-x: left;
+  background-size: auto;
+
+}
+
+
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:3px;
+  text-shadow: -1px 0 red;
+  top:0;
+  color: transparent;
+  background: transparent;
+  overflow:hidden;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate;
+    transform: skewX(0deg);
+    z-index: -2;
+    opacity: .7;
+    white-space: nowrap;
+
+}
+
+.glitch:before{
+  content:attr(data-text);
+    position:absolute;
+    left:1px;
+    text-shadow: -5px 0 rgba(0,0,255,.7);
+    top:0;
+    color: transparent;
+    background: transparent;
+    overflow: hidden;
+    clip:rect(0,900px,0,0);
+    animation:noise-anim-2 3s infinite linear alternate-reverse, shift 4s ease-in-out infinite alternate;
+    transform: skewX(0deg);
+    z-index: -1;
+    opacity: .8;
+    white-space: nowrap;
+}
+
+
+
+@keyframes noise-anim{
+    $steps:20;
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+            clip:rect(random(100)+px,9999px,random(100)+px,0);
+        }
+    }
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+
+@keyframes shift{
+  0%,40%, 44%, 58%, 61%, 65%,69%,73%,100%{
+    transform: skewX(0deg);
+  }
+  41%{
+    transform: skewX(10deg);
+  }
+  42%{
+    transform: skewX(-10deg);
+  }
+  59%{
+    transform: skewX(40deg) skewY(10deg);
+  }
+  60%{
+    transform: skewX(-40deg) skewY(-10deg);
+  }
+  63%{
+    transform: skewX(10deg) skewY(-5deg);
+  }
+  70%{
+    transform: skewX(-50deg) skewY(-20deg);
+  }
+  71%{
+    transform: skewX(10deg) skewY(-10deg);
+  }
+}
+}
+
 
 .hero {
   display: grid;
   top: 0;
- 
+
 }
 
 .header {
   position: fixed;
   height: 40px;
   width: 100vw;
-  background-color: transparentize(#5DBACC, 0.3);
+  background-color: transparentize($colorSecondary, 0.3);
   top: 0;
   display: flex;
   align-items: center;
@@ -70,6 +218,12 @@
     &--icon{
       transform: scaleX(1);
       transform-origin: bottom left;
+
+    }
+
+    &--icon:hover {
+      color: $colorPrincipal;
+
     }
 
   }
@@ -91,31 +245,56 @@
 
 
 .introduction {
-  
+
   @include desktop{
-    padding-left: 75px;
+    // padding-left: 30vw;
   }
 
   position: relative;
   display: block;
-  width: 75vw;
+  // width: 30vw;
   top: 130px;
   text-align: left;
-  padding-left: 12.5vw;
-  
+  opacity: 0;
+  // transition: opacity 1s ease;
+  // padding-left: 12.5vw;
 
 
   &__title {
+    width: 14vw;
     position: relative;
     font-size: 30px;
     font-family: 'Inclusive Sans', sans-serif;
     padding: 15px;
+
+    visibility: hidden;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .4px solid transparent; /* The typwriter cursor */
+    white-space: nowrap;
+    letter-spacing: .07em;
+    animation:
+      typing 2s steps(13, end),
+      blink-caret .6s step-end 4,
+      textOpacity 2s infinite;
+      
   }
 
   &__text {
     display: flex;
     padding: 15px;
-    
+
+    visibility: hidden;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .4px solid transparent; /* The typwriter cursor */
+    white-space: nowrap;
+    letter-spacing: .06em;
+    animation-delay: 6s;
+    animation:
+      typing 2s steps(13, end),
+      blink-caret .6s step-end 5,
+      textOpacity 2s infinite;
+    animation-delay: 3s;
+
     &--me{
         font-size: 14px;
         padding-right: 5px;
@@ -130,14 +309,47 @@
         height: 30px;
         text-align: center;
     }
-    
+
   }
 
   &__profession {
     padding: 10px;
     font-size: 25px;
+
+    visibility: hidden;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .4px solid $colorSecondary; /* The typwriter cursor */
+    white-space: nowrap;
+    letter-spacing: .06em;
+    animation:
+      typing 2s steps(13, end),
+      blink-caret .6s step-end infinite,
+      textOpacity 2s infinite;
+    animation-delay: 6s;
+    // animation-duration: 3s;
   }
-  
+
+}
+
+.introduction.visible {
+  opacity: 1;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  0% { border-color: transparent }
+  50% { border-color: $colorSecondary; }
+  100% { border-color: transparent}
+}
+
+@keyframes textOpacity {
+  from {  visibility: hidden;}
+  to {  visibility: visible; }
 }
 
 
@@ -152,7 +364,7 @@
 
   position: relative;
   padding-left: 12.5vw;
-  top: 220px;
+  top: 230px;
   width: 75vw;
   text-align: left;
   box-sizing: content-box;
@@ -168,11 +380,11 @@
     font-size: 17px;
 
     &--hl{
-      background-color: transparentize($colorSecundary, 0.70s);
+      background-color: transparentize($colorSecondary, 0.70s);
     }
 
     &--1 {
-      text-indent: 10px;
+      // text-indent: 10px;
       margin-top: 20px;
       margin-bottom: 20px;
     }
@@ -213,7 +425,7 @@
 }
 
 .skills{
-  
+
   margin-top: 40px;
   width: 100%;
 
@@ -223,7 +435,7 @@
     padding-left: 10px;
     color: white;
   }
- 
+
   &__container{
       display: flex;
       flex-direction: row;
@@ -280,7 +492,7 @@
     font-size: 17px;
 
     &--hl{
-      background-color: transparentize($colorSecundary, 0.70s);
+      background-color: transparentize($colorSecondary, 0.70s);
     }
 
     &--1 {
@@ -299,18 +511,18 @@
       text-indent: 10px;
       margin-top: 20px;
       margin-bottom: 20px;
-     
+
 
       &-duties {
          padding-top: 15px;
          li {
           list-style-type: circle;
-        
+
          }
          li::marker {
           content: '✝ ';
           font-size: 1.2em;
-          color: $colorSecundary;
+          color: $colorSecondary;
          }
       }
     }
@@ -330,13 +542,13 @@
   width: 75vw;
   text-align: left;
   box-sizing: content-box;
-  top: 60px;
+  top: 40px;
   padding-bottom: 100px;
 
 
   &__title {
     font-size: 30px;
-    padding-bottom: 20px;;
+    padding-bottom: 20px;
   }
 
   &__subtitle {
@@ -359,7 +571,7 @@
     font-size: 17px;
 
     &--hl{
-      background-color: transparentize($colorSecundary, 0.70s);
+      background-color: transparentize($colorSecondary, 0.70s);
     }
 
     &--1 {
@@ -378,41 +590,59 @@
       text-indent: 10px;
       margin-top: 20px;
       margin-bottom: 20px;
-     
+
 
       &-duties {
          padding-top: 15px;
          li {
           list-style-type: circle;
-        
+
          }
          li::marker {
           content: '✝ ';
           font-size: 1.2em;
-          color: $colorSecundary;
+          color: $colorSecondary;
          }
       }
     }
   }
 }
 
-.projects__title{
-  @include desktop{
-    padding-left: 75px;
-    box-sizing: border-box;
-  }
+
+.projects {
+
+@include desktop{
+  padding-left: 75px;
+  box-sizing: border-box;
+}
 
   position: relative;
   padding-left: 12.5vw;
   width: 75vw;
   text-align: left;
-  font-size: 30px;
+  box-sizing: content-box;
+  top: 40px;
+  padding-bottom: 200px;
+
+  &__title{
+    @include desktop{
+      box-sizing: border-box;
+    }
+
+    position: relative;
+    width: 75vw;
+    text-align: left;
+    font-size: 30px;
+  }
+
 }
+
+
 
 .proyectos {
   margin-top: 30px;
-  margin-bottom: 100px;
-  padding-bottom: 150px;
+  // margin-bottom: 100px;
+  // padding-bottom: 150px;
   padding-left: 75px;
   padding-right: 75px;
   display: flex;
@@ -428,14 +658,18 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    background-color: $colorSecundary;
+    background-color: $colorSecondary;
     height: 300px;
     border-radius: 10px;
     width: 100%;
     margin-bottom: 30px;
     flex-wrap: wrap;
-    padding: 10px;
-    margin: 10px;
+    padding: 20px;
+    margin: 17px;
+  }
+
+  &__rectangle:hover {
+    box-shadow: $shadow;
   }
 
 
@@ -456,12 +690,13 @@
       align-items: center;
       width: 40px;
       height: 40px;
-      background-color: white;
+      background-color: rgba(226, 55, 183, 0.768);
       margin-right: 10px;
       border-radius: 5px;
       &:hover {
         background-color: rgb(79, 76, 76);
         color: white;
+        box-shadow: $shadow;
       }
     }
   }
@@ -562,9 +797,9 @@
 
 .projects-list {
   @include tablet {
-    display: grid; 
-    grid-template-columns: 210px 210px 210px; 
-    grid-template-rows: 1fr 1fr 1fr; 
+    display: grid;
+    grid-template-columns: 210px 210px 210px;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 20px 20px;
   }
   @include desktop {
@@ -591,7 +826,7 @@
   justify-content: center;
   align-items: center;
 
-  
+
   &__legal {
     color: white;
   }

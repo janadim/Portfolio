@@ -1,5 +1,3 @@
-// import Rickandmorty from "../images/Rickandmorty.png";
-
 const Header = () => {
   return (
     <div className="header">

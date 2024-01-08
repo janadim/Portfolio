@@ -1,5 +1,6 @@
 import React from "react";
 
+// import Landing from "./Landing";
 import AboutMe from "./AboutMe";
 import Introduction from "./Introduction";
 import TechStack from "./TechStack";
